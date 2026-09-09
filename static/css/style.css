@@ -1,0 +1,531 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.search-box {
+    display: none;
+    margin-left: 10px;
+}
+
+.search-box.show {
+    display: block;
+}
+
+.search-box input {
+    width: 180px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a.active {
+    background-color: #444;
+    box-shadow: 0 0 12px #fff;
+}
+
+.nav-links a:hover {
+    background-color: #444;
+    box-shadow: 0 0 10px #fff;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.login-container {
+    width: 380px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #222;
+}
+
+.login-container button {
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #444;
+}
+
+.create-account {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: #222;
+    text-decoration: none;
+}
+
+.create-account:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SIGNUP
+========================= */
+
+.signup-page {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.signup-container {
+    width: 380px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.signup-group {
+    margin-bottom: 20px;
+}
+
+.signup-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.signup-group input {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.signup-group input:focus {
+    border-color: #222;
+}
+
+.signup-container button {
+    width: 100%;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-container button:hover {
+    background-color: #444;
+}
+
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: #222;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FLASH MESSAGES
+========================= */
+
+.flash {
+    width: 350px;
+    margin: 20px auto;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* =========================
+   PROFILE
+========================= */
+.profile-page {
+    min-height: calc(100vh - 70px);
+    background: #eef2f6;
+}
+
+/* Upper half with background image */
+.profile-top {
+    height: 50vh;
+    min-height: 350px;
+
+    position: relative;
+
+    background-image: url("/static/Image/pb.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Profile photo */
+.profile-photo {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 4px solid white;
+    background: #ddd;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-photo {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+/* User name */
+.profile-name {
+    position: absolute;
+    top: 60px;
+    right: 220px;
+
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Lower academic section */
+
+
+.academic-section {
+    width: 85%;
+    max-width: 900px;
+
+    margin: -30px auto 40px;
+    position: relative;
+
+    padding: 30px;
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+}
+
+/* Heading */
+.academic-section h2 {
+    margin: 0 0 20px;
+
+    font-size: 25px;
+    color: #222;
+}
+
+
+/* Information rows */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 12px 5px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #444;
+}
+
+.info-row span:last-child {
+    text-align: right;
+    color: #666;
+}
+
+.info-row span:last-child:empty {
+    color: #999;
+}
+.profile-actions {
+    position: absolute;
+    left: 50px;
+    bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-btn {
+    display: block;
+    width: 120px;
+
+    padding: 10px 18px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    background: rgba(78, 76, 76, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.profile-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateX(3px);
+}
+
+.logout-btn {
+    background: rgba(180, 30, 30, 0.7);
+}
+
+.logout-btn:hover {
+    background: rgba(180, 30, 30, 0.9);
+}
+
+
+.edit-modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.edit-box {
+    width: 420px;
+    padding: 25px;
+
+    background: white;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.edit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.edit-header h2 {
+    margin: 0;
+}
+
+.edit-header button {
+    border: none;
+    background: none;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.edit-box label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+.edit-box select,
+.edit-box input {
+    width: 100%;
+    padding: 11px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+#editInputBox {
+    margin-top: 15px;
+}
+
+#editInputBox button {
+    margin-top: 12px;
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2f6fed;
+    color: white;
+
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#editInputBox button:hover {
+    background: #1f5ed5;
+}
+
+
+.flash-message {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 25px;
+
+    background: #333;
+    color: white;
+
+    border-radius: 6px;
+
+    z-index: 9999;
+}

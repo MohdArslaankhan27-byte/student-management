@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-page">
+
+    <!-- Welcome Box -->
+    <div class="welcome-box">
+
+        <h1>Hello, {{ user.name }} 👋</h1>
+
+        <p>
+            Welcome to our Student Management Portal.
+        </p>
+
+        <p>
+            This website is designed to make student information easier
+            to manage and access. You can view student profiles, check
+            academic information, find classmates, and keep important
+            student details organized in one place.
+        </p>
+
+    </div>
+
+
+    <!-- Home Links -->
+    <div class="home-links">
+
+        <!-- Today's Lectures -->
+        <a href="{{ url_for('today_lectures') }}" class="home-card">
+
+            <div class="home-card-icon">
+                📚
+            </div>
+
+            <div>
+                <h2>Today's Lectures</h2>
+
+                <p>
+                    View today's classes and lecture schedule.
+                </p>
+            </div>
+
+            <span class="home-card-arrow">→</span>
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

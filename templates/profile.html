@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="profile-page">
+
+    <!-- Upper section -->
+    <div class="profile-top">
+
+        <div class="profile-photo">
+            {% if user.photo %}
+                <img src="{{ url_for('static', filename='uploads/' + user.photo) }}" alt="Profile Photo">
+            {% else %}
+                <div class="no-photo">👤</div>
+            {% endif %}
+        </div>
+
+        <div class="profile-name">
+            {{ user.name }}
+        </div>
+
+    <div class="profile-actions">
+    <button type="button" class="profile-btn" onclick="openEditModal()">
+    Edit Profile
+</button>
+    <a href="{{ url_for('logout') }}" class="profile-btn logout-btn">Logout</a>
+    </div>
+</div>
+    
+
+    <!-- Lower section -->
+    <div class="academic-section">
+
+        <h2>Academic Information</h2>
+
+        <div class="info-row">
+    <span>College/School</span>
+    <span>{{ user.college or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Course</span>
+    <span>{{ user.course or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Branch/Department</span>
+    <span>{{ user.branch or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Semester</span>
+    <span>{{ user.semester or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Roll Number</span>
+    <span>{{ user.roll_number or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Enrollment Number</span>
+    <span>{{ user.enrollment_number or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Academic Year</span>
+    <span>{{ user.academic_year or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Section</span>
+    <span>{{ user.section or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Current CGPA</span>
+    <span>{{ user.cgpa or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Percentage</span>
+    <span>{{ user.percentage or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Attendance</span>
+    <span>{{ user.attendance or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Subjects</span>
+    <span>{{ user.subjects or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Marks</span>
+    <span>{{ user.marks or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Grades</span>
+    <span>{{ user.grades or "Please fill this information" }}</span>
+</div>
+
+<div class="info-row">
+    <span>Backlogs</span>
+    <span>{{ user.backlogs or "Please fill this information" }}</span>
+</div>
+
+    </div>
+
+</div>
+
+<!-- Edit Profile Modal -->
+
+<div id="editModal" class="edit-modal">
+
+    <div class="edit-box">
+
+        <div class="edit-header">
+            <h2>Edit Profile</h2>
+            <button type="button" onclick="closeEditModal()">×</button>
+        </div>
+
+        <label for="editField">Select Information</label>
+
+        <select id="editField" onchange="showEditInput()">
+            <option value="">-- Select --</option>
+            <option value="name">Name</option>
+            <option value="photo">Photo</option>
+            <option value="college">College/School</option>
+            <option value="course">Course</option>
+            <option value="branch">Branch/Department</option>
+            <option value="semester">Semester</option>
+            <option value="roll_number">Roll Number</option>
+            <option value="enrollment_number">Enrollment Number</option>
+            <option value="academic_year">Academic Year</option>
+            <option value="section">Section</option>
+            <option value="cgpa">Current CGPA</option>
+            <option value="percentage">Percentage</option>
+            <option value="attendance">Attendance</option>
+            <option value="subjects">Subjects</option>
+            <option value="marks">Marks</option>
+            <option value="grades">Grades</option>
+            <option value="backlogs">Backlogs</option>
+        </select>
+
+        <div id="editInputBox"></div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/student.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/stu_profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="navbar">
+    <!-- Left: Logo -->
+    <div class="logo">
+        <a href="/">
+            <img src="{{ url_for('static', filename='image/SMLOGO.jpg') }}" alt="SMLOGO">
+        </a>
+    </div>
+
+    <!-- Middle-right: Search -->
+    <div class="search-area">
+        <button id="searchBtn" class="search-btn">🔍</button>
+
+        <div id="searchBox" class="search-box">
+            <input type="text" placeholder="Search...">
+        </div>
+    </div>
+
+    <!-- Right: Menu -->
+    <div class="nav-links">
+        <a href="/" class="{% if request.endpoint == 'home' %}active{% endif %}">
+            Home
+        </a>
+
+        <a href="/student" class="{% if request.endpoint == 'students' %}active{% endif %}">
+            Students
+        </a>
+
+        {% if session.get("user_id") %}
+        <a href="/profile" class="{% if request.endpoint == 'profile' %}active{% endif %}">
+            Profile
+        </a>
+        {% else %}
+        <a href="/login" class="{% if request.endpoint == 'login' %}active{% endif %}">
+            Login
+        </a>
+        {% endif %}
+    </div>
+</nav> 
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="flash-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% block content %}
+
+{% endblock %}
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+</html>

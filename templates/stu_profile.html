@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="stu-profile-page">
+
+    <!-- Top Profile Box -->
+    <div class="stu-profile-top">
+
+        <div class="stu-profile-photo">
+
+            {% if student.photo %}
+                <img src="{{ url_for('static', filename='uploads/' + student.photo) }}"
+                    alt="Student Photo">
+            {% else %}
+                <div class="stu-no-photo">👤</div>
+            {% endif %}
+
+        </div>
+
+
+        <div class="stu-main-info">
+
+            {% if student.name %}
+                <h1>{{ student.name }}</h1>
+            {% endif %}
+
+            {% if student.roll_number %}
+                <p>Roll No: {{ student.roll_number }}</p>
+            {% endif %}
+
+            {% if student.course %}
+                <p>Course: {{ student.course }}</p>
+            {% endif %}
+
+            {% if student.semester %}
+                <p>Semester: {{ student.semester }}</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Remaining Information -->
+    <div class="stu-profile-details">
+
+        <h2>Student Information</h2>
+
+
+        {% if student.college %}
+            <p>
+                <strong>College:</strong>
+                {{ student.college }}
+            </p>
+        {% endif %}
+
+
+        {% if student.branch %}
+            <p>
+                <strong>Branch:</strong>
+                {{ student.branch }}
+            </p>
+        {% endif %}
+
+
+        {% if student.section %}
+            <p>
+                <strong>Section:</strong>
+                {{ student.section }}
+            </p>
+        {% endif %}
+
+
+        {% if student.enrollment_number %}
+            <p>
+                <strong>Enrollment Number:</strong>
+                {{ student.enrollment_number }}
+            </p>
+        {% endif %}
+
+
+        {% if student.academic_year %}
+            <p>
+                <strong>Academic Year:</strong>
+                {{ student.academic_year }}
+            </p>
+        {% endif %}
+
+
+        {% if student.cgpa %}
+            <p>
+                <strong>CGPA:</strong>
+                {{ student.cgpa }}
+            </p>
+        {% endif %}
+
+
+        {% if student.percentage %}
+            <p>
+                <strong>Percentage:</strong>
+                {{ student.percentage }}
+            </p>
+        {% endif %}
+
+
+        {% if student.attendance %}
+            <p>
+                <strong>Attendance:</strong>
+                {{ student.attendance }}
+            </p>
+        {% endif %}
+
+
+        {% if student.subjects %}
+            <p>
+                <strong>Subjects:</strong>
+                {{ student.subjects }}
+            </p>
+        {% endif %}
+
+
+        {% if student.marks %}
+            <p>
+                <strong>Marks:</strong>
+                {{ student.marks }}
+            </p>
+        {% endif %}
+
+
+        {% if student.grades %}
+            <p>
+                <strong>Grades:</strong>
+                {{ student.grades }}
+            </p>
+        {% endif %}
+
+
+        {% if student.backlogs %}
+            <p>
+                <strong>Backlogs:</strong>
+                {{ student.backlogs }}
+            </p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
